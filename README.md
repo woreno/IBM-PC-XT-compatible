@@ -20,7 +20,7 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
   * HelpPC Reference Library by David Jurgens
   * Every datasheet you can think of.
 
-** Thanks to people i actually e-mailed them because...**
+**Thanks to people i actually e-mailed them...**
   - CFG register will set the GALs scheme? Manfred Winterhoff, the author of GALBlast project
   - Can HTC lag on XT-IDE? Charles Guzis, the author of XT-IDE, XT2PS2 project
   - Whats the use of this diode on Adlib? the author of an Adlib, Sergey Malinov 
