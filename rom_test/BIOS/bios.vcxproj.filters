@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="BIOS.asm" />
+    <None Include="bios\b_hddx.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_ints.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_keyb.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_mem.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_ports.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_rtc.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_sstep.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_sys.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_time.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_up.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_video.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_bda.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_disk.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_fdd.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="bios\b_hdd.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="draw\tty.inc">
+      <Filter>draw</Filter>
+    </None>
+    <None Include="draw\draw.inc">
+      <Filter>draw</Filter>
+    </None>
+    <None Include="init\draftmem.inc">
+      <Filter>init</Filter>
+    </None>
+    <None Include="init\init.inc">
+      <Filter>init</Filter>
+    </None>
+    <None Include="init\pic.inc">
+      <Filter>init</Filter>
+    </None>
+    <None Include="init\pit.inc">
+      <Filter>init</Filter>
+    </None>
+    <None Include="init\ram.inc">
+      <Filter>init</Filter>
+    </None>
+    <None Include="init\ramtest.inc">
+      <Filter>init</Filter>
+    </None>
+    <None Include="init\bootscr.inc">
+      <Filter>init</Filter>
+    </None>
+    <None Include="menu\m_ops.inc">
+      <Filter>menu</Filter>
+    </None>
+    <None Include="menu\m_sbp.inc">
+      <Filter>menu</Filter>
+    </None>
+    <None Include="menu\m_clk.inc">
+      <Filter>menu</Filter>
+    </None>
+    <None Include="menu\m_crt.inc">
+      <Filter>menu</Filter>
+    </None>
+    <None Include="menu\m_def.inc">
+      <Filter>menu</Filter>
+    </None>
+    <None Include="spk\voices.inc">
+      <Filter>spk</Filter>
+    </None>
+    <None Include="spk\spk.inc">
+      <Filter>spk</Filter>
+    </None>
+    <None Include="spk\spkdef.inc">
+      <Filter>spk</Filter>
+    </None>
+    <None Include="text\draft.txt">
+      <Filter>text</Filter>
+    </None>
+    <None Include="text\draft2.txt">
+      <Filter>text</Filter>
+    </None>
+    <None Include="text\drafts.txt">
+      <Filter>text</Filter>
+    </None>
+    <None Include="text\manual.txt">
+      <Filter>text</Filter>
+    </None>
+    <None Include="make.bat" />
+    <None Include="dosbox.config" />
+    <None Include="menu\up_com.inc">
+      <Filter>menu</Filter>
+    </None>
+    <None Include="menu\up_file.inc">
+      <Filter>menu</Filter>
+    </None>
+    <None Include="C:\Development\dosbox\asm\BIOSERR.TXT" />
+    <None Include="menu\b_menu.inc">
+      <Filter>menu</Filter>
+    </None>
+    <None Include="init\util.inc" />
+    <None Include="init\macros.inc" />
+    <None Include="fat\fat.da">
+      <Filter>fat</Filter>
+    </None>
+    <None Include="fat\fat.inc">
+      <Filter>fat</Filter>
+    </None>
+    <None Include="fat\fatdir.inc">
+      <Filter>fat</Filter>
+    </None>
+    <None Include="fat\fatinit.inc">
+      <Filter>fat</Filter>
+    </None>
+    <None Include="menu\m_wifi.inc">
+      <Filter>menu</Filter>
+    </None>
+    <None Include="C:\Development\docs\arquiteturas\PC XT\rom-IBM5160-XT\XTBIOS.ASM">
+      <Filter>cpp</Filter>
+    </None>
+    <None Include="in.bmp">
+      <Filter>draw</Filter>
+    </None>
+    <None Include="init\dmatest.inc">
+      <Filter>init</Filter>
+    </None>
+    <None Include="init\dmacfg.inc">
+      <Filter>init</Filter>
+    </None>
+    <None Include="init\CONFIG.inc" />
+    <None Include="init\DEFS.INC" />
+    <None Include="fat\fatdg.inc">
+      <Filter>fat</Filter>
+    </None>
+    <None Include="init\res\res.inc">
+      <Filter>res</Filter>
+    </None>
+    <None Include="init\res\resdef.inc">
+      <Filter>res</Filter>
+    </None>
+    <None Include="init\res\rle.inc">
+      <Filter>res</Filter>
+    </None>
+    <None Include="init\res\acp.inc">
+      <Filter>res</Filter>
+    </None>
+    <None Include="init\TESTS.INC" />
+    <None Include="bios\b_int.inc">
+      <Filter>bios</Filter>
+    </None>
+    <None Include="menu\update.inc">
+      <Filter>menu</Filter>
+    </None>
+    <None Include="menu\m_tests.inc">
+      <Filter>menu</Filter>
+    </None>
+    <None Include="´draft.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="bios">
+      <UniqueIdentifier>{8a2b2bcc-4ca1-4c79-8312-1eb2f705d125}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cpp">
+      <UniqueIdentifier>{382abfbc-9720-4c00-80f3-2815cc3cbae1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="init">
+      <UniqueIdentifier>{535357bd-ec2c-405f-b8d7-400d7a567c47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="menu">
+      <UniqueIdentifier>{223cf2b7-f452-4a75-a7d6-0070139d17c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="spk">
+      <UniqueIdentifier>{90c3a33d-cf64-46cc-88c2-e258b9a12917}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="text">
+      <UniqueIdentifier>{5a7539cd-ccdf-406e-bb82-3496df1bb6c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="draw">
+      <UniqueIdentifier>{b65834c0-d4df-4958-9640-76e0970b5f04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{402f9689-38d0-4548-a432-c84183080f7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="fat">
+      <UniqueIdentifier>{9a7fc6d6-dc61-42fe-b8ab-abdcd22998aa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cpp\test.cpp">
+      <Filter>cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="bios\drafts.cpp">
+      <Filter>bios</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cpp\vl_zero.hpp">
+      <Filter>cpp</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

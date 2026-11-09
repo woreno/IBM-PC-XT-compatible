@@ -1,0 +1,52 @@
+[autoexec]
+@echo off
+imgmount a  "E:\Hardware\ibm5160-XT\rom_test\BIOS\updateA.img" -t floppy
+imgmount b  "E:\Hardware\ibm5160-XT\rom_test\BIOS\updateB.img" -t floppy
+MOUNT c: c:\development\dosbox
+set path=c:\tasm\bin;c:\bc\bin;c:\bc\lib
+c:
+cd c:\asm
+main
+
+rem pause
+
+[sdl]
+fullscreen=false
+fulldouble=false
+fullresolution=original
+windowresolution=800x600 
+output=opengl
+autolock=true
+sensitivity=100
+waitonerror=true
+priority=higher,normal
+mapperfile=mapper-0.74-3.map
+usescancodes=true
+
+[dosbox]
+machine=cga
+captures=capture
+memsize=32
+
+[serial]
+serial1=directserial realport:COM3 rxdelay:0 txdelay:3
+
+[render]
+frameskip=0
+aspect=false
+scaler=normal8x
+
+[cpu]
+core=auto
+cputype=386_slow
+cycles=8000
+cycleup=10
+cycledown=20
+
+[dos]
+xms=true
+ems=true
+umb=true
+keyboardlayout=auto
+
+

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="in.bmp" />
+    <None Include="dosbox.config" />
+    <None Include="..\rom_test\defs.inc">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="C:\Development\dosbox\asm\BIOSERR.TXT">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="..\rom_test\drafts.txt">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="..\rom_test\tty.inc">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="..\rom_test\util.inc">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="..\rom_test\macros.inc">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="main.asm" />
+    <None Include="dosbox.config2" />
+    <None Include="draft.txt">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="..\rom_test\rle.inc" />
+    <None Include="make.bat" />
+    <None Include="test.inc" />
+    <None Include="..\rom_test\draw.inc" />
+    <None Include="..\rom_test\video.inc" />
+    <None Include="..\rom_test\b_video.inc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="comum">
+      <UniqueIdentifier>{89012f34-17d5-41bd-8aad-85708748e32d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

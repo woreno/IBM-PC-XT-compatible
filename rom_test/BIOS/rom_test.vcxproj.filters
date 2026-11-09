@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="comum">
+      <UniqueIdentifier>{af8d49df-6188-42a8-8806-4f7038170b48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="integrados">
+      <UniqueIdentifier>{90071d3a-1074-456b-9c6e-cfb0563c3efa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="make">
+      <UniqueIdentifier>{85f234ac-c981-4e4f-988c-e8a079a2ffd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="make\drafts">
+      <UniqueIdentifier>{6be181db-537e-46b1-babd-744a355e86dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="outros">
+      <UniqueIdentifier>{816e0f62-6744-4c0b-90a0-e880e29dd3ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="som e compressao">
+      <UniqueIdentifier>{7baa556a-23a1-4631-bf14-f35408eb7b49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="componentes">
+      <UniqueIdentifier>{2225c486-6c3e-4285-a6c0-df01847f4a56}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dosbox.config">
+      <Filter>make</Filter>
+    </None>
+    <None Include="make.bat">
+      <Filter>make</Filter>
+    </None>
+    <None Include="manual.txt">
+      <Filter>make</Filter>
+    </None>
+    <None Include="macros.inc">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="pic.inc">
+      <Filter>integrados</Filter>
+    </None>
+    <None Include="pit.inc">
+      <Filter>integrados</Filter>
+    </None>
+    <None Include="ports.inc">
+      <Filter>integrados</Filter>
+    </None>
+    <None Include="draft2.txt">
+      <Filter>make\drafts</Filter>
+    </None>
+    <None Include="draft.txt">
+      <Filter>make\drafts</Filter>
+    </None>
+    <None Include="video.inc">
+      <Filter>integrados</Filter>
+    </None>
+    <None Include="drafts.txt">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="tty.inc">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="util.inc">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="C:\Development\docs\arquiteturas\PC XT\rom-IBM5160-XT\XTBIOS.ASM">
+      <Filter>comum</Filter>
+    </None>
+    <None Include="tests.inc" />
+    <None Include="snddef.inc">
+      <Filter>som e compressao</Filter>
+    </None>
+    <None Include="snd.inc">
+      <Filter>som e compressao</Filter>
+    </None>
+    <None Include="rle.inc">
+      <Filter>som e compressao</Filter>
+    </None>
+    <None Include="sndoff.inc">
+      <Filter>som e compressao</Filter>
+    </None>
+    <None Include="sndzip.inc">
+      <Filter>som e compressao</Filter>
+    </None>
+    <None Include="b_bda.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_disk.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_fdd.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_hdd.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_hddx.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_ints.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_keyb.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_mem.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_menu.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_ports.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_rtc.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_serial.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_sstep.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_video.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="b_time.inc">
+      <Filter>componentes</Filter>
+    </None>
+    <None Include="init.inc" />
+    <None Include="BIOS.asm" />
+    <None Include="C:\Development\dosbox\asm\BIOSERR.TXT" />
+    <None Include="CONFIG.inc" />
+    <None Include="defs.inc" />
+    <None Include="b_sys.inc" />
+    <None Include="ram.inc" />
+    <None Include="dma.inc" />
+    <None Include="ramtest.inc" />
+    <None Include="draw.inc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vl_zero.hpp">
+      <Filter>outros</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="test.cpp">
+      <Filter>som e compressao</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

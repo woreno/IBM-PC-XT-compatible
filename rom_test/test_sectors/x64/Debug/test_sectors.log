@@ -1,0 +1,31 @@
+﻿Build started 12/4/2022 4:49:08 PM.
+     1>Project "E:\Hardware\ibm5160-XT\rom_test\test_sectors\test_sectors.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "x64\Debug\test_sectors.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt main.cpp -DBOOST_ALL_NO_LIB
+         main.cpp
+         *** a imprimir na CONSOLA
+         ------- Velociraptor config -----------------
+          Windows
+          64Bit
+          Little Endian
+          Visual C
+          com aceleracao vetorial:
+           AVX1
+           SSE2
+           suporta small vector math: nao
+         ------- Velociraptor config -----------------
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Hardware\ibm5160-XT\rom_test\x64\Debug\test_sectors.exe" /NOLOGO C:\Development\velociraptor\extra\glew\lib\Debug\x64\glew32d.lib C:\Development\velociraptor\extra\capstone\msvc\x64\Debug\capstone.lib C:\Development\velociraptor\extra\freetype\objs\freetype.lib C:\Development\velociraptor\extra\espeak\Debug\espeak_lib.lib C:\Development\velociraptor\extra\openal\include\libs\Win64\OpenAL32.lib C:\Development\toolchains\openssl\lib64\libsslMTd.lib C:\Development\toolchains\openssl\lib64\libcryptoMDd.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Debug\test_sectors.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\Hardware\ibm5160-XT\rom_test\x64\Debug\test_sectors.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Hardware\ibm5160-XT\rom_test\x64\Debug\test_sectors.lib" /MACHINE:X64 x64\Debug\main.obj
+         test_sectors.vcxproj -> E:\Hardware\ibm5160-XT\rom_test\x64\Debug\test_sectors.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\Hardware\ibm5160-XT\rom_test\x64\Debug\test_sectors.exe;#1" /manifest x64\Debug\test_sectors.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "x64\Debug\test_sectors.unsuccessfulbuild".
+         Touching "x64\Debug\test_sectors.lastbuildstate".
+     1>Done Building Project "E:\Hardware\ibm5160-XT\rom_test\test_sectors\test_sectors.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.28

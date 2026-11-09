@@ -1,0 +1,70 @@
+; código de teste 
+; ===============
+;  Este código é colocado na 2ª ROM de 32KB do PC, 
+;  nos seus 16KB baixos - na parte alta da ROM em 7FF0
+;  existe uma instrução de salto (FAR) para o inicio 
+;  deste código
+;
+;  - é configurado o PPI
+;  - testa-se o visor e os leds
+;     - não enconstar a expansão totalmente à esquerda existe uma
+;       folga +- 1mm para a direita; quando o visor acender está ok
+;  - testa-se o varrer frequencias sonoras no contador 2 do PIT 
+;  - botões ligados ao PPI
+;    mostra-se nos leds o estado dos botões e emite um som ao mudar
+;    se todos ON, avança para o próximo
+;  - memória:
+;    - é usada SS:SP na ROM para indexar os intervalos de 
+;      segmentos de cada coluna de chips DRAM, essa array
+;      está no fim deste código em ADDRESSES_STACKTOP 
+;      se preciso testar poucas colunas de chips, mudar 
+;      <TEST_RAM_TOP> ou coloca-lo a 0AAAAh para teste total
+;    - a meio dos testes, configura-se o canal 0 do DMA e o 
+;      contador 1 PIT a 66.7KHz (serve de arrancador ao circuito DMA,
+;      este por sua vez pede o bus ao controlador de bus, faz leitura 
+;      de 1 byte para um dispositivo I/O (que nao existe, e pelo que os
+;      dispositivos tem-de se precaver na validação dos seus endereços com ~AEN); 
+;      internamente o DMA coloca e (roda) um endereço novo a cada cedência do bus, 
+;      para leitura, e circuitos adicionais sabendo que está em neste estado, 
+;      ativam todas as linhas RAS e nenhuma CAS - o que conclui a atualização
+;      de uma linha de celulas em todos os chips DRAM, e assim consecutivamente  
+;    - testes à memória que podem ser escolhidos:
+;       os condensadores nas células de memórias tendem a descarregar
+;       em pouco tempo, por isso são feitos testes diferentes
+;     - <TEST_RAM_LINES> linhas:
+;       escreve apenas no byte 0 de cada coluna de DRAMs; RASi, CASi,
+;       devem ser verificadas
+;     - <TEST_RAM_NO_DMA> sem DMA, escrita e leitura quase imediata:
+;       este teste parece suficiente para saber se a DRAM está funcional
+;       tem apenas um pequeno intervalo de algumas nops entre W/R
+;     - <TEST_RAM_DMA_PAUSE> depois de ativar DMA pausar
+;     - <TEST_RAM_BYTE_BYTE> depois de DMA ativo, escrita total, paragem e leitura total no visor
+;     - <TEST_RAM> depois de DMA ativo, escrita total, paragem e verificação total depois
+;        - estes dois testes dependem se a atualização por DMA está a ser 
+;	       bem levada a cabo; por isso é feita uma paragem à espera pelo
+;		   botão WAIT antes de verificar. Passado um tempo, ao carregar
+;		   no botão com a verificação pode-se concluir que as memórias
+;		   estão a ser bem atualizadas
+;        - se encontrado alguuma diferença entre escrita e leitura, vai
+;          aparecer no visor a piscar:
+;                 [ byte escrito | coluna Y | bit X ]
+;                 [  byte lido   | coluna Y | bit X ]
+;          no caso mais simples é problema dum chip na [coluna Y] [linha X]
+;          sendo a coluna Y=0..3 e o bit X=0..7; 
+;          reparar que o bit X indicado é o 1º diferente nesse byte e logo 
+;          mas como podem haver mais, é melhor verificar os bytes para saber
+;          o total de bits não correspondentes
+;          na memória vista como uma grelha, cada linha corresponde a um bit,
+;          sendo o bit 0 a 1ª linha de cima; 
+;          as colunas se numeram da esquerda-para-a-direita se parte frontal
+;          e da direita-para-esquerda se parte de solda
+;          no entanto um chip anomolo pode estar lixar as linhas de dados
+;          nao respeitando o seu momento RAS/CAS, alem de poder criar instabilidade,
+;          ao ponto de não permitir iniciar tão pouco os testes; em alguns
+;          casos, a informação do visor pode não ajudar identificar o chip anomolo 
+;
+;  - interrupções:
+;    - é usada SS:SP na DRAM
+;    - os ponteiros dos tratadores são instalados na RAM baixa, 
+;      e o PIC é configurado; assim que um IRQ salta-se para
+;      uma função que imprime no visor o número da linha IRQ

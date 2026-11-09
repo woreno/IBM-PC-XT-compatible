@@ -1,0 +1,90 @@
+;---------------------------------------------------------------------------
+FAT_DEBUG_CHAIN			EQU 0	; cluster e prox. cluster
+FAT_DEBUG_CHAINBUFFER	EQU 0	; currente -> proximo cluster
+FAT_DEBUG_LOADER		EQU 0   ; diz o LB e CHS	
+FAT_DEBUG_LOADERBUFFER	EQU 0	; mostra qq coisa a ser carregada
+FAT_DEBUG_DIR			EQU 0
+FAT_DEBUG_ENTRIESBUF	EQU 0	
+FAT_DEBUG_ENTRIES		EQU 0	; entradas de diretorio
+FAT_DEBUG_FATCASES		EQU 0	; 2º casos em 12-bit
+FAT_DEBUG_LOADTAB		EQU 0	; ao carregar FATs
+FAT_DEBUG_LOOKUP		EQU 0	
+FAT_DEBUG_DISK			EQU 0
+FAT_DEBUG_DISKPARAMS	EQU 0
+FAT_DEBUG_SIGN			EQU 0
+ 
+;---------------------------------------------------------------------------
+FAT_DIRIT_RES_SUCCESS	EQU 1
+FAT_DIRIT_RES_ERROR		EQU 2
+FAT_DIRIT_RES_NOTFOUND	EQU 3
+;---------------------------------------------------------------------------
+FAT_DIRSEG				EQU (UPDATE_BASESEG+60h)
+FAT_FATSEG              EQU (UPDATE_BASESEG+20h) ; 2 FATs 1KB: 400h
+FAT_HEADERSEG			EQU (UPDATE_BASESEG+10h)
+FAT_WORKSEG SEGMENT		 AT UPDATE_BASESEG
+	fatwork_typeStr				dw ? ;
+	fatwork_entry_LB			dw ? ; o LBA da entrada 
+	fatwork_entry_LBHi			dw ? ; encontrada
+	fatwork_entry_Sz			dw ? ; o tamanho 
+	fatwork_entry_SzHi			dw ? ; da entrada encontrada
+	fatwork_allocMul			db ? ; 
+	fatwork_allocShifter		db ? ; 
+	fatwork_rootDirLB			dw ? ; BL: raíz
+	fatwork_rootDirLBHi			dw ? ; BL: raíz
+	fatwork_rootDirNumLBs		dw ? ; #BL da raíz
+	fatwork_allocStartLB		dw ? ; BL: começa as alocações
+	fatwork_FATStartLB			dw ? ; BL: começa a FAT
+	fatwork_lastUsedFATLB		dw ? ; BL: qual foi o ultimo
+	fatwork_lastUsedFATLBHi		dw ? ; BL: qual foi o ultimo
+	fatwork_p_fatLookup			dw ? ; dx:ax->dx:ax bloco->proximo
+	fatwork_p_fatInitRootDir	dw ?  
+	fatwork_p_fatItRootDir		dw ?  
+	fatwork_p_fatInit			dw ?
+	fatwork_searchFilename		db 11 dup(?)  
+	fatwork_LBAoffset			dw ? ; BL: onde começar
+	fatwork_LBAoffsetHi			dw ? ;	   (se partição, etc)
+	fatwork_param_TC			dw ?  
+	fatwork_param_TH			db ?  
+	fatwork_param_TS			db ?  
+	fatwork_param_DRIVE			db ?  
+FAT_WORKSEG ENDS
+
+fat_entry_name      EQU 0
+fat_entry_ext       EQU 8
+fat_entry_atts      EQU 11
+fat_entry_reserved  EQU 12
+fat_entry_time      EQU 13
+fat_entry_ctime     EQU 14
+fat_entry_cdate     EQU 16
+fat_entry_accdate   EQU 18
+fat_entry_LBhi      EQU 20
+fat_entry_lastTime  EQU 22
+fat_entry_lastDate  EQU 23
+fat_entry_LB		EQU 26
+fat_entry_size		EQU 28
+fat_entry_sizeHi	EQU 30
+
+fat_hdr_startJumpCode        EQU 0
+fat_hdr_nameSYSOEM			 EQU 3
+fat_hdr_numBytesPerSector 	 EQU 11
+fat_hdr_numSectorsPerAlloc	 EQU 13
+fat_hdr_numReservedSectors	 EQU 14	; ->     A 
+fat_hdr_numFATs				 EQU 16	; ->     B
+fat_hdr_numRootFiles		 EQU 17	; -> + N*32/512
+fat_hdr_numLogicalSectors	 EQU 19 ;    -----------
+fat_hdr_mediaType			 EQU 21	;    inicio alocacoes (se F12/16)
+fat_hdr_numSectorsPerFAT	 EQU 22
+fat_hdr_numSectorsPerTrack	 EQU 24
+fat_hdr_numHeads	  		 EQU 26
+fat_hdr_numHiddenSectors     EQU 28
+fat_hdr_numLB_Hi  		     EQU 32
+
+fat_hdr_dos4_drvNumber		 EQU 36
+fat_hdr_dos4_volumeSerial	 EQU 39
+fat_hdr_dos4_volumeLabel	 EQU 43
+
+fat_hdr_dos7_sectsPerFat	 EQU 36
+fat_hdr_dos7_numRootDirLB	 EQU 44
+
+fat_hdrdos4_sign             EQU 54
+fat_hdrdos7_sign             EQU 82
