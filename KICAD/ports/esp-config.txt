@@ -1,0 +1,12 @@
+;versao
+AT+GMR
+;base station
+AT+CWMODE=1
+;listar todos os APs
+AT+CWLAP
+;ligar-se a um
+;AT+CWJAP="MEO-F6E070","0c78b55ade"
+;obter o IP
+AT+CIFSR
+
+

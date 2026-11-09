@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name xt-rescue)(type Legacy)(uri ${KIPRJMOD}/xt-rescue.lib)(options "")(descr ""))
+  (lib (name apple)(type Legacy)(uri E:/Hardware/appleii/appleii/appleii.lib)(options "")(descr ""))
+)

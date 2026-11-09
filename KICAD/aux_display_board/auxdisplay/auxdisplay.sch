@@ -1,0 +1,542 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Label 3975 925  0    50   ~ 0
+GND
+$Comp
+L 74xx:74LS670 U13
+U 1 1 61A0C06F
+P 4875 4050
+F 0 "U13" H 4975 4825 50  0000 C CNN
+F 1 "74LS670" H 5100 4725 50  0000 C CNN
+F 2 "GERAL:standard_DIP_16OvalPins" H 4875 4050 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS670" H 4875 4050 50  0001 C CNN
+	1    4875 4050
+	1    0    0    -1  
+$EndComp
+Text Label 2425 1225 0    315  Italic 63
+SEGMENT-DISPLAY
+$Comp
+L power:Earth #PWR0108
+U 1 1 61A294A1
+P 1000 5325
+F 0 "#PWR0108" H 1000 5075 50  0001 C CNN
+F 1 "Earth" H 1000 5175 50  0001 C CNN
+F 2 "" H 1000 5325 50  0001 C CNN
+F 3 "~" H 1000 5325 50  0001 C CNN
+	1    1000 5325
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	800  5275 1000 5275
+Wire Wire Line
+	1000 5275 1000 5325
+Wire Wire Line
+	4375 4450 4250 4450
+$Comp
+L GERAL:74LS139 U14
+U 1 1 61A95A91
+P 5825 4475
+F 0 "U14" H 5850 5050 50  0000 C CNN
+F 1 "74LS139" H 5850 4959 50  0000 C CNN
+F 2 "GERAL:standard_DIP_16OvalPins" H 5875 5025 50  0001 C CNN
+F 3 "" H 5875 5025 50  0001 C CNN
+	1    5825 4475
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 4450 4250 5050
+Wire Wire Line
+	4250 5050 5325 5050
+Wire Wire Line
+	5325 5050 5325 4375
+Wire Wire Line
+	5325 4375 5475 4375
+Connection ~ 4250 4450
+Wire Wire Line
+	4300 4550 4300 5150
+Wire Wire Line
+	4300 5150 5375 5150
+Wire Wire Line
+	5375 5150 5375 4475
+Wire Wire Line
+	5375 4475 5475 4475
+Connection ~ 4300 4550
+Wire Wire Line
+	4300 4550 4375 4550
+$Comp
+L Display_Character:CC56-12SRWA U16
+U 1 1 61AAAC35
+P 9375 4650
+F 0 "U16" H 9375 5317 50  0000 C CNN
+F 1 "CC56-12SRWA" H 9375 5226 50  0000 C CNN
+F 2 "Display_7Segment:CA56-12SRWA" H 9375 4050 50  0001 C CNN
+F 3 "http://www.kingbrightusa.com/images/catalog/SPEC/CC56-12SRWA.pdf" H 8945 4680 50  0001 C CNN
+	1    9375 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5375 3550 5375 2350
+Wire Wire Line
+	5375 2350 5625 2350
+Wire Wire Line
+	5375 3650 5450 3650
+Wire Wire Line
+	5450 3650 5450 2450
+Wire Wire Line
+	5450 2450 5625 2450
+Wire Wire Line
+	5625 2550 5500 2550
+Wire Wire Line
+	5500 2550 5500 3750
+Wire Wire Line
+	5500 3750 5375 3750
+Wire Wire Line
+	5375 3850 5550 3850
+Wire Wire Line
+	5550 3850 5550 2650
+Wire Wire Line
+	5550 2650 5625 2650
+$Comp
+L power:Earth #PWR0110
+U 1 1 61AF6C50
+P 4875 4950
+F 0 "#PWR0110" H 4875 4700 50  0001 C CNN
+F 1 "Earth" H 4875 4800 50  0001 C CNN
+F 2 "" H 4875 4950 50  0001 C CNN
+F 3 "~" H 4875 4950 50  0001 C CNN
+	1    4875 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR0111
+U 1 1 61AFB631
+P 5475 5175
+F 0 "#PWR0111" H 5475 4925 50  0001 C CNN
+F 1 "Earth" H 5475 5025 50  0001 C CNN
+F 2 "" H 5475 5175 50  0001 C CNN
+F 3 "~" H 5475 5175 50  0001 C CNN
+	1    5475 5175
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR0112
+U 1 1 61AECBEE
+P 3400 5250
+F 0 "#PWR0112" H 3400 5000 50  0001 C CNN
+F 1 "Earth" H 3400 5100 50  0001 C CNN
+F 2 "" H 3400 5250 50  0001 C CNN
+F 3 "~" H 3400 5250 50  0001 C CNN
+	1    3400 5250
+	1    0    0    -1  
+$EndComp
+Text Label 3850 4550 0    50   Italic 10
+dispC1
+Text Label 3850 4450 0    50   Italic 10
+dispC0
+Text Label 2900 4900 2    50   Italic 10
+dispCLK~
+Wire Wire Line
+	3850 4550 4300 4550
+Wire Wire Line
+	4250 4450 3850 4450
+$Comp
+L GERAL:74LS161 U9
+U 1 1 61A164C2
+P 3400 4600
+F 0 "U9" H 3575 4075 50  0000 C CNN
+F 1 "74LS161" H 3600 4000 50  0000 C CNN
+F 2 "GERAL:standard_DIP_16OvalPins" H 3400 4400 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS161" H 3400 4400 50  0001 C CNN
+	1    3400 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR0113
+U 1 1 61B047E9
+P 6225 3450
+F 0 "#PWR0113" H 6225 3200 50  0001 C CNN
+F 1 "Earth" H 6225 3300 50  0001 C CNN
+F 2 "" H 6225 3450 50  0001 C CNN
+F 3 "~" H 6225 3450 50  0001 C CNN
+	1    6225 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 61BA7B0C
+P 2300 3225
+F 0 "R3" V 2400 3225 50  0000 C CNN
+F 1 "R" V 2475 3225 50  0000 C CNN
+F 2 "GERAL:standard_2pins" V 2230 3225 50  0001 C CNN
+F 3 "~" H 2300 3225 50  0001 C CNN
+	1    2300 3225
+	0    1    1    0   
+$EndComp
+Text Label 2900 4800 2    50   ~ 0
+5V
+Text Label 2150 3225 2    50   ~ 0
+5V
+Text Label 6225 4125 0    50   ~ 0
+5V
+Text Label 6225 1900 0    50   ~ 0
+5V
+$Comp
+L power:Earth #PWR0114
+U 1 1 61CF4E01
+P 8275 5050
+F 0 "#PWR0114" H 8275 4800 50  0001 C CNN
+F 1 "Earth" H 8275 4900 50  0001 C CNN
+F 2 "" H 8275 5050 50  0001 C CNN
+F 3 "~" H 8275 5050 50  0001 C CNN
+	1    8275 5050
+	1    0    0    -1  
+$EndComp
+Text Label 4375 3550 2    50   Italic 10
+D0
+Text Label 4375 3650 2    50   Italic 10
+D1
+Text Label 4375 3750 2    50   Italic 10
+D2
+Text Label 4375 3850 2    50   Italic 10
+D3
+Wire Wire Line
+	4875 4950 4375 4950
+Wire Wire Line
+	4375 4950 4375 4650
+Connection ~ 4875 4950
+Text Label 4375 4050 2    50   Italic 10
+A0
+Text Label 4375 4150 2    50   Italic 10
+A1
+Text Label 4375 4250 2    50   Italic 10
+~dispCS
+Wire Wire Line
+	1375 4900 2525 4900
+Wire Wire Line
+	1000 4975 2175 4975
+Wire Wire Line
+	800  4450 1375 4450
+Wire Wire Line
+	1000 4550 1375 4550
+Text Label 1375 4650 2    50   Italic 10
+dispCLK~
+Wire Wire Line
+	2175 4175 2175 4250
+Text Label 2175 4175 0    50   ~ 0
+5V
+Connection ~ 2175 4250
+Wire Wire Line
+	2025 4250 2175 4250
+Wire Wire Line
+	2025 4450 2025 4250
+Wire Wire Line
+	2525 4250 2175 4250
+Wire Wire Line
+	2525 4900 2525 4250
+Wire Wire Line
+	1375 4750 1375 4900
+Wire Wire Line
+	800  4450 800  5275
+Connection ~ 1000 4975
+$Comp
+L Device:C C1
+U 1 1 61A27CEB
+P 1000 5125
+F 0 "C1" H 1115 5171 50  0000 L CNN
+F 1 "C" H 1115 5080 50  0000 L CNN
+F 2 "GERAL:standard_2pins_half" H 1038 4975 50  0001 C CNN
+F 3 "~" H 1000 5125 50  0001 C CNN
+	1    1000 5125
+	1    0    0    -1  
+$EndComp
+Connection ~ 1375 4550
+Wire Wire Line
+	1000 4975 1000 4550
+Wire Wire Line
+	2175 4850 2175 4975
+Connection ~ 2175 4550
+Wire Wire Line
+	2025 4550 2175 4550
+$Comp
+L Device:R R2
+U 1 1 61A21CB7
+P 2175 4700
+F 0 "R2" H 2245 4746 50  0000 L CNN
+F 1 "R" H 2245 4655 50  0000 L CNN
+F 2 "GERAL:standard_2pins" V 2105 4700 50  0001 C CNN
+F 3 "~" H 2175 4700 50  0001 C CNN
+	1    2175 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 61A21745
+P 2175 4400
+F 0 "R1" H 2245 4446 50  0000 L CNN
+F 1 "R" H 2245 4355 50  0000 L CNN
+F 2 "GERAL:standard_2pins" V 2105 4400 50  0001 C CNN
+F 3 "~" H 2175 4400 50  0001 C CNN
+	1    2175 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1750 4650 2025 4650
+Wire Wire Line
+	1750 4550 1750 4650
+Wire Wire Line
+	1375 4550 1750 4550
+$Comp
+L GERAL:555 U8
+U 1 1 61A0F85B
+P 1725 4600
+F 0 "U8" H 1700 5015 50  0000 C CNN
+F 1 "555" H 1700 4924 50  0000 C CNN
+F 2 "GERAL:standard_DIP_8pins" H 1725 5000 50  0001 C CNN
+F 3 "" H 1725 5000 50  0001 C CNN
+	1    1725 4600
+	1    0    0    -1  
+$EndComp
+Connection ~ 1000 5275
+Text Notes 950  3700 0    50   Italic 10
+montagem sinal periódico:\nfaz um clk de baixa frequência\npara atualizar os digitos
+Text Notes 2400 3750 0    50   Italic 10
+o contador incrementa, para\nse selecionar o registo de saída \n(00,01,10,10) a cada clk
+Text Notes 3400 3225 0    50   Italic 10
+esta presa guarda 4 digitos por A0,A1 e DADOS\npermite escrever se\ndescodificado o seu endereço\ncom ~IOW
+Text Label 4875 3250 0    50   ~ 0
+5V
+Text Notes 6275 5400 0    50   Italic 10
+o demux dado (00,01,10,11)\npoem a GND a respetiva linha,\npara selecionar o digito
+Text Label 8275 4350 2    50   Italic 10
+dispA_11
+Text Label 8275 4450 2    50   Italic 10
+dispB_7
+Text Label 8275 4550 2    50   Italic 10
+dispC_4
+Text Label 8275 4650 2    50   Italic 10
+dispD_2
+Text Label 8275 4750 2    50   Italic 10
+dispE_1
+Text Label 8275 4850 2    50   Italic 10
+dispF_10
+Text Label 8275 4950 2    50   Italic 10
+dispG_5
+Text Label 10475 5050 0    50   Italic 10
+dispDigit0_12
+Text Label 10475 4950 0    50   Italic 10
+dispDigit1_9
+Text Label 10475 4850 0    50   Italic 10
+dispDigit2_8
+Text Label 10475 4750 0    50   Italic 10
+dispDigit3_6
+Text Label 8425 3050 0    50   Italic 10
+dispA_11
+Text Label 8425 3450 0    50   Italic 10
+dispB_7
+Text Label 7925 3250 2    50   Italic 10
+dispC_4
+Text Label 7925 3050 2    50   Italic 10
+dispD_2
+Text Label 8425 3150 0    50   Italic 10
+dispF_10
+Text Label 7925 3350 2    50   Italic 10
+dispG_5
+Text Label 8425 3250 0    50   Italic 10
+dispDigit1_9
+Text Label 8425 3350 0    50   Italic 10
+dispDigit2_8
+Text Label 7925 3450 2    50   Italic 10
+dispDigit3_6
+Text Label 7925 2950 2    50   Italic 10
+dispE_1
+Wire Wire Line
+	5475 4275 5375 4275
+Wire Wire Line
+	5375 4275 5375 4250
+Wire Wire Line
+	5375 4250 5275 4250
+Text Label 6225 5025 0    50   Italic 10
+dispDigit3_6
+Text Label 6225 4925 0    50   Italic 10
+dispDigit2_8
+Text Label 6225 4825 0    50   Italic 10
+dispDigit1_9
+$Comp
+L power:Earth #PWR0116
+U 1 1 62131727
+P 2700 4650
+F 0 "#PWR0116" H 2700 4400 50  0001 C CNN
+F 1 "Earth" H 2700 4500 50  0001 C CNN
+F 2 "" H 2700 4650 50  0001 C CNN
+F 3 "~" H 2700 4650 50  0001 C CNN
+	1    2700 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 4700 2800 4700
+Wire Wire Line
+	2800 4700 2800 4650
+Wire Wire Line
+	2800 4650 2700 4650
+Wire Wire Line
+	2900 4300 2900 4400
+Wire Wire Line
+	2900 4400 2900 4500
+Connection ~ 2900 4400
+Wire Wire Line
+	2900 4500 2900 4600
+Connection ~ 2900 4500
+Wire Wire Line
+	2900 4600 2800 4600
+Wire Wire Line
+	2800 4600 2800 4650
+Connection ~ 2900 4600
+Connection ~ 2800 4650
+Wire Wire Line
+	6825 3150 6825 3325
+Wire Wire Line
+	6825 3325 6000 3325
+Wire Wire Line
+	5625 3325 5625 3150
+Text Label 2450 3225 0    50   Italic 10
+dispPullup
+Text Label 2900 5000 2    50   Italic 10
+dispPullup
+Text Label 6000 3450 2    50   Italic 10
+dispPullup
+Wire Wire Line
+	6000 3450 6000 3325
+Connection ~ 6000 3325
+Wire Wire Line
+	6000 3325 5625 3325
+Text Notes 5625 1700 0    50   Italic 10
+o descodificador de caracteres 7-seg\nrecebe os dados da presa\naqui o LS247 foi trocado por DM9368 (fairchild)
+Text Label 6825 2950 0    50   Italic 10
+dispG_5
+Text Label 6825 2850 0    50   Italic 10
+dispF_10
+Text Label 6825 2750 0    50   Italic 10
+dispE_1
+Text Label 6825 2650 0    50   Italic 10
+dispD_2
+Text Label 6825 2550 0    50   Italic 10
+dispC_4
+Text Label 6825 2450 0    50   Italic 10
+dispB_7
+Text Label 6825 2350 0    50   Italic 10
+dispA_11
+Wire Wire Line
+	6225 1900 6225 2050
+$Comp
+L 74xx:74LS248 U15
+U 1 1 61AC7F8D
+P 6225 2750
+F 0 "U15" H 6425 3425 50  0000 C CNN
+F 1 "DM9368" H 6425 3325 50  0000 C CNN
+F 2 "GERAL:standard_DIP_16OvalPins" H 6225 2750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS248" H 6225 2750 50  0001 C CNN
+	1    6225 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR0117
+U 1 1 61B4E099
+P 5625 2950
+F 0 "#PWR0117" H 5625 2700 50  0001 C CNN
+F 1 "Earth" H 5625 2800 50  0001 C CNN
+F 2 "" H 5625 2950 50  0001 C CNN
+F 3 "~" H 5625 2950 50  0001 C CNN
+	1    5625 2950
+	1    0    0    -1  
+$EndComp
+Text Label 7925 3150 2    50   ~ 0
+GND
+Text Notes 7550 2625 0    50   Italic 10
+no disp de segmento:\n diz-se "segmento" a um parte da forma do digito (existem 7 segmentos)\n e tem letras associadas de A a G\n\n dispA..G é o número segmento (ativar com pullup)\n dispDigit0..3 é o digito o selecionar a GND, restantes a VCC)\neste segmento é catodo comum \n(DIGITO está a GND)
+Text Label 8425 2950 0    50   Italic 10
+dispDigit0_12
+Text Label 6225 4725 0    50   Italic 10
+dispDigit0_12
+$Comp
+L Connector_Generic:Conn_02x06_Counter_Clockwise J1
+U 1 1 636F4338
+P 8125 3150
+F 0 "J1" H 8175 3567 50  0000 C CNN
+F 1 "Conn_02x06_Counter_Clockwise" H 8175 3476 50  0000 C CNN
+F 2 "GERAL:Conector2x6_Oval_anticlock" H 8125 3150 50  0001 C CNN
+F 3 "~" H 8125 3150 50  0001 C CNN
+	1    8125 3150
+	1    0    0    -1  
+$EndComp
+Text Label 7400 625  0    50   ~ 0
+5V
+Text Label 5300 4000 0    50   Italic 10
+~digitsON
+Wire Wire Line
+	5275 4250 5275 4000
+Wire Wire Line
+	5275 4000 5300 4000
+$Comp
+L Connector:Conn_01x11_Female J2
+U 1 1 682EE19E
+P 2350 2200
+F 0 "J2" H 2378 2226 50  0000 L CNN
+F 1 "Conn_01x11_Female" H 2378 2135 50  0000 L CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x11_P1.00mm_Vertical" H 2350 2200 50  0001 C CNN
+F 3 "~" H 2350 2200 50  0001 C CNN
+	1    2350 2200
+	1    0    0    -1  
+$EndComp
+Text Label 2150 2700 2    50   Italic 10
+VCC
+Text Label 2150 1800 2    50   Italic 10
+GND
+Text Label 2150 2000 2    50   Italic 10
+~dispCS
+Text Label 2150 2100 2    50   Italic 10
+D0
+Text Label 2150 2200 2    50   Italic 10
+D1
+Text Label 2150 2300 2    50   Italic 10
+D2
+Text Label 2150 2400 2    50   Italic 10
+D3
+Text Label 2150 2600 2    50   Italic 10
+A0
+Text Label 2150 2500 2    50   Italic 10
+A1
+Text Label 1950 2700 2    50   Italic 10
+5V
+Wire Wire Line
+	2150 2700 1950 2700
+Wire Wire Line
+	2150 1800 1450 1800
+Wire Wire Line
+	1450 1800 1450 1900
+$Comp
+L power:Earth #PWR?
+U 1 1 68344B11
+P 1450 1900
+F 0 "#PWR?" H 1450 1650 50  0001 C CNN
+F 1 "Earth" H 1450 1750 50  0001 C CNN
+F 2 "" H 1450 1900 50  0001 C CNN
+F 3 "~" H 1450 1900 50  0001 C CNN
+	1    1450 1900
+	1    0    0    -1  
+$EndComp
+Text Label 1450 1800 2    50   Italic 10
+~digitsON
+$EndSCHEMATC

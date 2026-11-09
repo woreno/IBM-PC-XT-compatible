@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name xt-rescue)(type Legacy)(uri E:/Hardware/ibm5160-XT/xt/xt-rescue.lib)(options "")(descr ""))
+)

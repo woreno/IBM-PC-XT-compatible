@@ -1,0 +1,26 @@
+%SIGNAL
+PIN   1 =  A3 
+PIN   2 =  A4 
+PIN   3 =  A5 
+PIN   4 =  A6 
+PIN   5 =  A7 
+PIN   6 =  A8 
+PIN   7 =  A9 
+PIN  11 =  AEN 
+PIN  13 =  DATA_DIR 
+PIN  12 =  FDC_CS_ 
+PIN   8 =  IOR_ 
+PIN   9 =  IOW_ 
+%END
+
+%FIELD
+%END
+
+%EQUATION
+DATA_DIR =>
+    IOR_
+
+FDC_CS_ =>
+    !A3 & A4 & A5 & A6 & A7 & A8 & A9 & !AEN
+
+%END
