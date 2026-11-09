@@ -7,16 +7,10 @@ In 2021, after manually designing and building an Apple 2 compatible computer an
 Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and muxes, buffers, latches, and other glue logic is done using 74 series.
 
 **BIOS**
-	
 	* The BIOS has build in TASM using DOSBOX. 
-	
-	* The BIOS was written from scratch except the INT10h (video services). The computer started without a videocard; first i built and relied on a ISA-card that displayed 
-   4 seven-segment digits and 8 leds. Being the only way of displaying information from the computer, this board was very important, so after being built manually i tested rigorously the I/O with an ISA raiser, flipping buttons and multimeter, then, installing it on a Pentium PC and C Code. The BIOS has slowly developed step by step using this display board, so there's code everywhere that makes I/O to this board (including step and errors). After, i built the insane CGA card. At the first it used a primitive INT10h without a VBLANK wait (so a lot of white rain when printing), and at the end, since i was a bit exausted, i prefered to copy the original IBM PC XT INT10h code for having full compatiblity.
-
+	* The BIOS was written from scratch except the INT10h (video services). The computer started without a videocard; first i built and relied on a ISA-card that displayed 4 seven-segment digits and 8 leds. Being the only way of displaying information from the computer, this board was very important, so after being built manually i tested rigorously the I/O with an ISA raiser, flipping buttons and multimeter, then, installing it on a Pentium PC and C Code. The BIOS has slowly developed step by step using this display board, so there's code everywhere that makes I/O to this board (including step and errors). After, i built the insane CGA card. At the first it used a primitive INT10h without a VBLANK wait (so a lot of white rain when printing), and at the end, since i was a bit exausted, i prefered to copy the original IBM PC XT INT10h code for having full compatiblity.
 	* After building the IDE/RTC card i had problems booting DOS. I had to CRC at each block at INT13h and do a comparasion with the groundtruth in another PC. So i end up to include also Single-Step and Breakpoint features that can be activated by code. 
- 
 	* The BIOS has a CGA welcome screen (compacted with RLE) and digitilized voices for digits (compacted with DeltaMod) these resources are glued and placed at 0xFB900. At the beggining at 0xF8000 there is the CRC and signature, and pointers to the previous resources. Theres a jump at 0xFFFF0 to the begining of the code. The voices were intended for announcing the time (with the RTC board) after POST, but at the end i decided to no call the feature, because it was too fancy.
- 
 	* In the last revision of this computer, i added a switch to allow the PROMs to be written, and the BIOS can be updated via serial port, wifi or diskettes, so FAT code has added. Wifi was planned to added to the Paralllel/Serial/Joystick board, by adding a ESP8266 as the serial port (but i didn't finish this part); Wifi settings are stored in RTC memory along other BIOS settings. The make script composes a package to that goal.
 
 
