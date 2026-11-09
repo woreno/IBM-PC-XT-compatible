@@ -6,6 +6,14 @@ The design of the boards done here, is a bit personal. As other pcbs i do in-hou
 In 2021, after manually designing and building an Apple 2 compatible computer and an Adlib card, i ask my self "it would be possible to build a bigger system an IBM PC XT compatible using the same methods and tools???" (it seemed a big task by then). When i began, i wanted to be 8086 compatible, but the 16-bit bus and 16-bit memory organization logic, would make it impossible to fit in the maximum dimensions allowed by my own tools (A4 copper sheets), further the capacitance and thus distortion would be more pronounced on circuits.
 Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and muxes, buffers, latches, and other glue logic is done using 74 series.
 
+**BIOS**
+ * The BIOS was written from scratch except the INT10h (video services). The computer started without a videocard so, instead, i first build and relied on a ISA-card that displayed 
+   4 seven-segment digits and 8 leds. Being the only way of displaying information from the computer, this board was very important, so after being built manually i tested rigorously the I/O with an ISA raiser, flipping buttons and multimeter, then, installing it on a Pentium PC and C Code. The BIOS has slowly developed step by step using this display board, so there's code everywhere that makes I/O to this board (including step and errors). After, i built the insane CGA card. At the first it used a primitive INT10h without a VBLANK wait (so a lot of white rain when printing), and at the end, since i was a bit exausted, i prefered to copy the original IBM PC XT INT10h code for having full compatiblity.
+ * After building the IDE/RTC card i had problems booting DOS. I had to CRC at each block at INT13h and do a comparasion with the groundtruth in another PC. So i end up to include also Single-Step and Breakpoint features that can be activated by code. 
+ * The BIOS has a CGA welcome screen (compacted with RLE) and digitilized voices for digits (compacted with DeltaMod) these resources are glued and placed at 0xFB900. At the beggining at 0xF8000 there is the CRC and signature, and pointers to the previous resources. Theres a jump at 0xFFFF0 to the begining of the code. The voices were intended for announcing the time (with the RTC board) after POST, but at the end i decided to no call the feature, because it was too fancy.
+ * In the last revision of this computer, i added a switch to allow the PROMs to be written, and the BIOS can be updated via serial port or diskettes. So the make script will make the update packages to that goal.
+
+
 
 **References**
   * The Indispensable PC Hardware Book - Hans Peter Messmer; 1994
