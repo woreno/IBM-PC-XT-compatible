@@ -17,7 +17,7 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
 
 
 
-**References**
+**References**.
   * The Indispensable PC Hardware Book - Hans Peter Messmer; 1994
   * Digital Systems Project / Projecto de Sistemas Digitais (ISEL) - Victor Pimenta Rodrigues, Mário Seia de Araujo; 1988 (3th edition 2001)
   * IBM PC XT Technical Reference; 1983
@@ -28,6 +28,7 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
   * AT2XT Keyboard Adapter by Charles Guzis
   * XT-IDE by Charles Guzis, Vintage Computer Federation member (VCF)
   * HelpPC Reference Library by David Jurgens
+  * Ben Eater's EEPROM arduino programmer
   * Every datasheet you can think of.
 
 **Thanks to people i actually e-mailed them...**
