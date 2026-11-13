@@ -29,6 +29,7 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
   * XT-IDE by Charles Guzis, Vintage Computer Federation member (VCF)
   * HelpPC Reference Library by David Jurgens
   * Ben Eater's EEPROM arduino programmer
+  * Dr Dobbs journal delta modulation
   * Every datasheet you can think of.
 
 **Thanks to people i actually e-mailed them...**
