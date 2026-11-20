@@ -16,9 +16,38 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
 * The CGA video card was done by following the IBM schematics, but the logic was written into a few Atmel 16v8B GALs instead of using discrete gates chips and the DRAM was replaced with SRAM. A RGB-component output port was added for better video signal.
 
 
+**The Serial/Parallel/Joystick board**
+
+  This is basically 3 IBM cards all in one, using the same 74 discrete logic.
+
+**The IDE/RTC board**
+
+  This is a card built from a similar IDE project from Vintage Computer Federation. It adds a RTC chip from Dallas; theres some discrete logic as this chip wasn't directly interfaceable with I/O. 
+
+**The Floppy Disk board**
+
+  This is basically a PS/2-era floppy disk controller chip from Intel. It adds another slot, because i wanted to try an Ethernet card, and at end, i ran out of slots.
+
 **The features I/O test board**
 
  The features I/O test board has 8-leds + 4 digit 7-segment display (and a Texas Instruments Chip for displaying hexadecimal) + ADC Intel Chip; the 8-leds, 7-segment display and knobs can be installed on a front panel and connected to the board with ribbon cables. All the features on this card are accessed with I/O ports - the leds and 4 digit display are latches, the ADC value comes from the ADC chip. The BIOS will use the 8-leds for a startup animation, then as a progress bar for POST, then the last 2 leds flashes during Int13h Read/Write operations. The 4 digit, 7-segment display is used also for displaying each step, error codes (and error location, like address and memory bank). The board has two analog inputs for knobs (potentiometers); these are connected to a differential op-amp setup; when the resistance changes they will trigger an interrupt and the channel identifier will be latched; the BIOS code handles these interrupts, doing I/O to the board for finding out the knob identifier + digitalized value; and at the end, it displays these as "A or B" plus a value from 0 to 100. One of these knobs was used for adjusting the Adlib output.     
+
+**The CGA Display board**
+
+  Same logic as CGA implemented as Atmel GAL instead of discrete logic, and SRAM instead of RAM. Other parts differ, like driving the IOREADY signal using a transistor, cursor blinking using a 555 timer, etc. 
+
+**The Adlib Sound board**
+
+  The schematics were extracted from Adlib component side/solder side photos from eBay (i found 2 sets of photos from 1989 and 1990 that differed)- 
+
+**The Memory board***
+
+ This board holds the DRAM chips. 
+  
+**The Expansion Slots board***
+ 
+ This boards holds the expansion slots.
+
 
 **References**.
   * The Indispensable PC Hardware Book - Hans Peter Messmer; 1994
