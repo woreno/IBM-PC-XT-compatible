@@ -16,7 +16,8 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
 * The CGA video card was done by following the IBM schematics, but the logic was written into a few Atmel 16v8B GALs instead of using discrete gates chips and the DRAM was replaced with SRAM. A RGB-component output port was added for better video signal.
 
 
-
+**The features I/O test board**
+The features I/O test board has 8-leds + 7-segment display (and a Texas Instruments Chip for displaying hexadecimal) + ADC Intel Chip; the features leds, display and knobs can be installed on a front panel and connected to the board with ribbon cables.  All the features on this card are accessed with I/O ports. The BIOS will use the 8-leds for a startup animation, then as a progress bar for POST, then the last 2 leds flashes during Int13h R/W operations. The 7-segment display is used also for displaying each step, error codes (and error location, like address and memory bank). The board has two analog inputs for knobs (potentiometers); these are connected to differential op-amp setup; when the resistance is changed they will trigger an interrupt and the channel identifier will be latched; the BIOS code catches these interrupts, does I/O to the board for finding out the knob identifier + digitalized value + , and at the end, it displays these as "A or B" plus a value from 0 to 100. One of these knobs was used for adjusting the Adlib output.     
 
 **References**.
   * The Indispensable PC Hardware Book - Hans Peter Messmer; 1994
