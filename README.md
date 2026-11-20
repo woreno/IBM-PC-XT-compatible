@@ -40,11 +40,11 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
 
   The schematics were extracted from Adlib component side/solder side photos from eBay (i found 2 sets of photos from 1989 and 1990 that differed)- 
 
-**The Memory board***
+**The Memory board**
 
  This board holds the DRAM chips. 
   
-**The Expansion Slots board***
+**The Expansion Slots board**
  
  This boards holds the expansion slots.
 
