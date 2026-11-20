@@ -26,7 +26,7 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
 
 **The Floppy Disk board**
 
-  This is basically a PS/2-era floppy disk controller chip from Intel. It adds another slot, because i wanted to try an Ethernet card, and at end, i ran out of slots.
+  This is basically a PS/2-era floppy disk controller chip from Intel. Before this chip, FDD boards required a few chips. It adds another slot, because i wanted to try an Ethernet card, and at end, i ran out of slots.
 
 **The features I/O test board**
 
