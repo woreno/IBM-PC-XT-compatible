@@ -25,7 +25,7 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
 
 **The IDE/RTC board**
 
-  This is a card built from a similar IDE project from Vintage Computer Federation. It adds a RTC chip from DS12887 Dallas integrating a crystal oscillator and battery; there's some additional discrete logic as this chip wasn't directly interfaceable with I/O (it has an additional AS line, refer to the manual). I add to the motherboard to make an exception to allow ISA cards to use I/O ports 0x70/1, thus a RTC card is able to use this legacy I/O port address. Since the Dallas chip's battery drained just within a few days of testing, i had to drill the enclosure and add a second battery (this seemed the usual practice in the retrocomputing community).
+  This is a card built from a similar IDE project from Vintage Computer Federation. It adds a RTC chip from DS12887 Dallas integrating a crystal oscillator and battery; there's some additional discrete logic as this chip wasn't directly interfaceable with I/O (it has an additional AS line, refer to the manual). I needed to fix the motherboard to make an exception to allow ISA cards to use I/O ports 0x70/1, thus a RTC card is able to use this legacy I/O port address. Since the Dallas chip's battery drained just within a few days of testing, i had to drill the enclosure and add a second battery (this seemed the usual practice in the retrocomputing community).
 
 **The Floppy Disk board**
 
