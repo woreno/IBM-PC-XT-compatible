@@ -25,7 +25,7 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
 
 **The IDE/RTC board**
 
-  This is a card built from a similar IDE project from Vintage Computer Federation. It adds a RTC chip from Dallas; theres some discrete logic as this chip wasn't directly interfaceable with I/O. 
+  This is a card built from a similar IDE project from Vintage Computer Federation. It adds a RTC chip from Dallas; theres some discrete logic as this chip wasn't directly interfaceable with I/O. A last fix to the motherboard is an exception to allow ISA cards to use I/O ports 0x70/1, thus a RTC card is able to use this legacy I/O port address.
 
 **The Floppy Disk board**
 
