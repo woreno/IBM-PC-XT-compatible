@@ -25,31 +25,30 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
 
 **The IDE/RTC board**
 
-  This is a card built from a similar IDE project from Vintage Computer Federation. It adds a RTC chip from Dallas; theres some discrete logic as this chip wasn't directly interfaceable with I/O. A last fix to the motherboard is an exception to allow ISA cards to use I/O ports 0x70/1, thus a RTC card is able to use this legacy I/O port address.
+  This is a card built from a similar IDE project from Vintage Computer Federation. It adds a RTC chip from DS12887 Dallas integrating a crystal oscillator and battery; there's some additional discrete logic as this chip wasn't directly interfaceable with I/O (it has an additional AS line, refer to the manual). I add to the motherboard to make an exception to allow ISA cards to use I/O ports 0x70/1, thus a RTC card is able to use this legacy I/O port address. Since the Dallas chip's battery drained just within a few days of testing, i had to drill the enclosure and add a second battery (this seemed the usual practice in the retrocomputing community).
 
 **The Floppy Disk board**
 
   This is basically a PS/2-era floppy disk controller chip from Intel. Before this chip, FDD boards required a few chips. It adds another slot, because i wanted to try an Ethernet card, and at end, i ran out of slots.
 
 **The features I/O test board**
-
- The features I/O test board has 8-leds + 4 digit 7-segment display (and a Texas Instruments Chip for displaying hexadecimal) + ADC Intel Chip; the 8-leds, 7-segment display and knobs can be installed on a front panel and connected to the board with ribbon cables. All the features on this card are accessed with I/O ports - the leds and 4 digit display are latches, the ADC value comes from the ADC chip. The BIOS will use the 8-leds for a startup animation, then as a progress bar for POST, then the last 2 leds flashes during Int13h Read/Write operations. The 4 digit, 7-segment display is used also for displaying each step, error codes (and error information, like address and memory bank). The board has two analog inputs for knobs (potentiometers); these are connected to a differential op-amp setup; when the resistance changes they will trigger an interrupt and the channel identifier will be latched; the BIOS code handles these interrupts, doing I/O to the board for finding out the knob identifier + digitalized value; and at the end, it displays these as "A or B" plus a value from 0 to 100. One of these knobs was used for adjusting the Adlib output.     
+ The features I/O test board has 8-leds + 4 digits 7-segment display (and a Texas Instruments DM9368 for displaying hexadecimal) + ADC Intel ADC0808 Chip (for reading voltages); the 8-leds, 4 digits 7-segment display and knobs can be installed on a front panel and connected to the board with ribbon cables. All the features on this card are accessed with I/O ports - the 8 leds and 4 digits display are set with latches, the ADC values (2 channels) comes directly from the ADC chip. The BIOS will use the 8-leds for a startup animation, then use them as a progress bar for POST, then the last 2 leds flashes during Int13h Read/Write operations. The 4 digits 7-segment display is used also for displaying each step, error codes (and error information, like address and memory bank). The board has two analog inputs for knobs (potentiometers); these are connected to a differential op-amp setup; when the resistance changes they will trigger an interrupt and the channel identifier will be latched; the BIOS code handles these interrupts, doing I/O to the board for finding out the knob identifier + digitalized value; and at the end, it displays these as "A or B" plus a value from 0 to 100. One of these knobs was used for adjusting the Adlib output level.     
 
 **The CGA Display board**
 
-  The CGA video card was done following the IBM schematics, but the logic was written into a few Atmel 16v8B GALs instead of using discrete gates chips and the DRAM was replaced with SRAM. I used WinCUPL to compile the files and used my own-programmer that can be found also on github. A RGB-component output port was added for better video signal; the composite signal wasnt well generated with the atf16v8b flipflops (has noisy). Other parts differ, like removing the lightpen option, driving the IOREADY signal using a transistor, cursor blinking using a 555 timer, etc. 
+  The CGA video card was done turning the IBM schematics into logic expressions, then this logic was written into a few Atmel 16v8B GALs. The DRAM was replaced with SRAM. I used WinCUPL to compile the files and used my own-programmer that can be found also on my github. A RGB-component output port was added for better video signal; the composite signal wasn't well generated with the ATF16v8B's flipflops (the signal has noisy). Other parts differ, like the removing of lightpen option, driving the IOREADY signal using a transistor, cursor blinking using a 555 timer, etc. 
 
 **The Adlib Sound board**
 
-  The schematics were extracted from Adlib component side/solder side photos from eBay (i found 2 sets of photos from 1989 and 1990 that differed)- 
+  The schematics were extracted following the Adlib component side/solder side photos from eBay (i found 2 sets of photos from 1989 and 1990 that differed). 
 
 **The Memory board**
 
- This board holds the DRAM chips, having a RAS/CAs + databus interface.
+ This board holds the DRAM chips, having a RAS/CAS + databus interface.
   
 **The Expansion Slots board**
  
- This boards holds the expansion slots and as a ISA-8 bit interface. Basically a ISA raiser.
+ This boards holds the expansion slots and has a ISA-8 bit interface. Basically an ISA raiser.
 
 
 **References**.
