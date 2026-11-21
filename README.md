@@ -8,10 +8,11 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
 
 **BIOS**
 
-* The BIOS is compiled with TASM using DOSBOX. 
-* The BIOS was written from scratch except the INT10h (video services). The computer started without a videocard; first i built and relied on a ISA-card that displayed 4 seven-segment digits and 8 leds. Being the only way of displaying information from the computer, this board was very important, so after being built manually i tested rigorously the I/O with an ISA raiser, flipping buttons and multimeter, then, installing it on a Pentium PC and C Code. The BIOS has slowly developed step by step using this display board, so there's code everywhere that makes I/O to this board (the BIOS will display step and errors by I/O to this board). After, i built the insane CGA card. At the first it used a primitive INT10h without a VBLANK wait (so a lot of white rain when printing), and at the end, since i was a bit exausted, i prefered to copy the original IBM PC XT, dissasembled INT10h code for having full compatiblity.
-* After building the IDE/RTC card i had problems booting DOS. I had to CRC the blocks at INT13h and do a comparasion with the groundtruth in another PC. So i end up to include also Single-Step and Breakpoint features, and debugging code traces at INT13h that can be activated by code. At the end, it was some IC on the IDE/RTC card that wasnt working properly. 
-* The BIOS has a CGA welcome screen (compacted with RLE) and digitilized voices for digits (compacted with DeltaMod) these resources are glued and placed at 0xFB900. At the beggining at 0xF8000 there is the CRC and signature, and pointers to the previous resources. Theres a jump at 0xFFFF0 to the begining of the code. The voices were intended for announcing the time (with the RTC board) after POST, but at the end i decided to no call the feature, because it was too fancy.
+* The BIOS is compiled with TASM using DOSBOX.
+* The most important BIOS step is to configure PIT and DMA controller chips so DRAM chips are refreshed.
+* The BIOS was written from scratch except the INT10h (video services). The computer started without a videocard; first i built and relied on a ISA-card that displayed 4 seven-segment digits and 8 leds. Being the only way of displaying information from the computer, this board was very important, so after being built manually i tested rigorously the I/O with an ISA raiser, flipping buttons and multimeter, then, installing it on a Pentium PC testing it with C Code. The BIOS has slowly developed step by step using this display board, so there's code everywhere that makes I/O to this board (the BIOS will display step and errors by I/O to this board). After, i built the insane CGA card. At the first it used a primitive INT10h without a VBLANK wait (so a lot of white rain when printing), and at the end, since i was a bit exausted, i prefered to copy the original IBM PC XT, dissasembled INT10h code for having full compatiblity.
+* After building the IDE/RTC card i had problems booting DOS. I had to checksum the blocks at INT13h and do a comparasion with the groundtruth in another PC. So i end up to include also Single-Step and Breakpoint features, and debugging code traces at INT13h that can be activated by code. At the end, it was some IC on the IDE/RTC card that wasnt working properly. 
+* The BIOS has a CGA welcome screen (compacted with RLE) and digitilized voices for digits (compacted with DeltaMod) these resources are glued and placed at 0xFB900. At the beggining at 0xF8000 there is the checksum and signature, and pointers to the previous resources. Theres a jump at 0xFFFF0 to the begining of the code. The digitalised voices were intended for announcing the time (with the RTC board) after POST, but at the end i decided to no call the feature, because it was too fancy.
 * In the last revision of this computer, i added a switch to allow the PROMs to be written, and the BIOS can be updated via serial port, wifi or diskettes, so FAT code has added. Wifi was planned to added to the Paralllel/Serial/Joystick board, by adding a ESP8266 as the serial port (but i didn't finish this part); Wifi settings are stored in RTC memory along other BIOS settings. The make script composes a package to that goal.
 * The CGA video card was done by following the IBM schematics, but the logic was written into a few Atmel 16v8B GALs instead of using discrete gates chips and the DRAM was replaced with SRAM. A RGB-component output port was added for better video signal.
 
@@ -30,11 +31,11 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
 
 **The features I/O test board**
 
- The features I/O test board has 8-leds + 4 digit 7-segment display (and a Texas Instruments Chip for displaying hexadecimal) + ADC Intel Chip; the 8-leds, 7-segment display and knobs can be installed on a front panel and connected to the board with ribbon cables. All the features on this card are accessed with I/O ports - the leds and 4 digit display are latches, the ADC value comes from the ADC chip. The BIOS will use the 8-leds for a startup animation, then as a progress bar for POST, then the last 2 leds flashes during Int13h Read/Write operations. The 4 digit, 7-segment display is used also for displaying each step, error codes (and error location, like address and memory bank). The board has two analog inputs for knobs (potentiometers); these are connected to a differential op-amp setup; when the resistance changes they will trigger an interrupt and the channel identifier will be latched; the BIOS code handles these interrupts, doing I/O to the board for finding out the knob identifier + digitalized value; and at the end, it displays these as "A or B" plus a value from 0 to 100. One of these knobs was used for adjusting the Adlib output.     
+ The features I/O test board has 8-leds + 4 digit 7-segment display (and a Texas Instruments Chip for displaying hexadecimal) + ADC Intel Chip; the 8-leds, 7-segment display and knobs can be installed on a front panel and connected to the board with ribbon cables. All the features on this card are accessed with I/O ports - the leds and 4 digit display are latches, the ADC value comes from the ADC chip. The BIOS will use the 8-leds for a startup animation, then as a progress bar for POST, then the last 2 leds flashes during Int13h Read/Write operations. The 4 digit, 7-segment display is used also for displaying each step, error codes (and error information, like address and memory bank). The board has two analog inputs for knobs (potentiometers); these are connected to a differential op-amp setup; when the resistance changes they will trigger an interrupt and the channel identifier will be latched; the BIOS code handles these interrupts, doing I/O to the board for finding out the knob identifier + digitalized value; and at the end, it displays these as "A or B" plus a value from 0 to 100. One of these knobs was used for adjusting the Adlib output.     
 
 **The CGA Display board**
 
-  Same logic as CGA implemented as Atmel GAL instead of discrete logic, and SRAM instead of RAM. Other parts differ, like driving the IOREADY signal using a transistor, cursor blinking using a 555 timer, etc. 
+  Same logic as CGA, implemented as Atmel ATF16v8B GALs instead of 74 discrete logic;  SRAM was used instead of DRAM. Other parts differ, like driving the IOREADY signal using a transistor, cursor blinking using a 555 timer, etc. 
 
 **The Adlib Sound board**
 
@@ -42,11 +43,11 @@ Most components on IBM PC XT are Intel, DRAM, ROM ICs. Some control, demuxes and
 
 **The Memory board**
 
- This board holds the DRAM chips. 
+ This board holds the DRAM chips, having a RAS/CAs + databus interface.
   
 **The Expansion Slots board**
  
- This boards holds the expansion slots.
+ This boards holds the expansion slots and as a ISA-8 bit interface. Basically a ISA raiser.
 
 
 **References**.
